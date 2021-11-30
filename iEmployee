@@ -11,3 +11,73 @@ namespace Final
 
     }
 }
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Final
+{
+    public class SalariedEmployee : iEmployee
+    {
+        int hours_worked;
+        int no_of_units;
+        int Base_hours=160;
+        int hourlypayrate=2;
+        int Overtime_rate;
+        int fixed_salary=500;
+        public void Calculate_Salary()
+        {
+            if (hours_worked > Base_hours)
+            {
+                if (no_of_units>=0 && no_of_units<=100)
+                { 
+                int basepay = hourlypayrate * Base_hours;
+
+                int overtimehours = hours_worked - Base_hours;
+
+                int overtimePay = overtimehours * hourlypayrate * Overtime_rate;
+                
+                int unitPay = 3 * no_of_units;
+             
+
+                int Grosspay = basepay + overtimePay + unitPay;
+            }
+
+              
+    }
+}
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Final
+{
+    public class Hourlypaid : iEmployee
+    {
+
+        int hours_worked;
+        int no_of_units;
+        int Base_hours=160;
+        int hourlypayrate=2;
+        int Overtime_rate;
+        public void Calculate_Salary()
+        {
+            if (hours_worked > Base_hours)
+            {
+                int basepay = hourlypayrate * Base_hours;
+
+                int overtimehours = hours_worked - Base_hours;
+
+                int overtimePay = overtimehours * hourlypayrate * Overtime_rate;
+                int unitPay = 3 * no_of_units;
+
+                int Grosspay = basepay + overtimePay + unitPay;
+            }
+
+        }
+    }
+}
